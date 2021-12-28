@@ -1,31 +1,28 @@
-#flex{
-     /* We first create a flex layout context */
-    display: flex;
-    /* Then we define the flow direction 
-       and if we allow the items to wrap 
-     * Remember this is the same as:
-     * flex-direction: row;
-     * flex-wrap: wrap;
-     */
-    flex-flow: row wrap;
-    /* Then we define how is distributed the remaining space */
-    justify-content: space-around;
-    padding: 0;
-    margin: 0;
-    list-style: none;
+#grid{
+   display: inline-flex;
+   justify-content: flex-end;
+   height: 100px;
+   width: 2000px;
+   flex-wrap: wrap;
+   
 }
 
- .flex-item{
-    background: white;
-    border-style: solid;
-    border-color: black;
-    width: 100px;
-    height: 100px;
-    margin: 50px auto;
-    width: 100px;  
-    height: 100px; /* Or whatever */
-    margin: auto;  
+.item{
+   flex-basis: 200px;
+   background: white;
+   border: black;
+   border-style: solid;
+   padding: 1em;
+   height: 180px;
+   width: 50px;
+   margin-top: 10px;
+   color: white;
+   
+  
  }
+
+
+ 
  
 
 
