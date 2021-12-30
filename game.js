@@ -31,7 +31,7 @@ function createEventListener() {
   myGame.addEventListener("mouseover", function(e){
     const target = e.target; 
 
-    if(target.matches("div")){
+    if(target.matches(".item")){
         target.style.backgroundColor = random_bg_color();;
     }
   });

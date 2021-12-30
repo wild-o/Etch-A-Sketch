@@ -6,8 +6,10 @@
    flex-direction: row;
    flex-wrap: wrap;
    justify-content: center;
-   margin: 0px auto; 
+   margin: auto; 
+   margin-top: 70px;
    align-items: center;
+   align-content: flex-start;
 }
 
 .item{
@@ -15,14 +17,27 @@
    border: black;
    border-style: solid;
    padding: 3em;
-   margin-top: 1px;
+   margin-top: 0px;
    color: white;
    
-  
- }
+}
+.outer{
+   border: 1px solid black;
+   width:400px;
+   margin: auto; 
+   display: flex;
+   justify-content: space-between;
+   margin-top: 30px;
+
+}
+.inner{
+   border: 1px solid black;
+   height: 50px;
+   width: 500px;
+}
 
 
- 
+
  
 
 
