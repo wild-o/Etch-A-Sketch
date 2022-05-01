@@ -11,16 +11,6 @@ window.onload = function addDiv(){
     }
 }
 
-// Jan 4th - The next step here is to add event listener to each button element (perhaps look into querySelector all? 
-// refer here: https://stackoverflow.com/questions/51573435/want-to-add-addeventlistener-on-multiple-elements-with-same-class
-
-
-// Jan 6th attempting to use Event Delegation in order to select buttons from the outer node. 
-
-
-//Adding an Event Listener to a Dynamically Created Element
-//Event Delegation? 
-
 function clearGrid(){
   const myButt = document.getElementById("1")
   
@@ -31,6 +21,25 @@ function clearGrid(){
     testingClear.forEach(item => {
       item.style.backgroundColor = "#FFFFFF";
     })
+  })
+}
+
+function setToBlack() {
+  const blackButton = document.getElementById("2")
+    blackButton.addEventListener("click", function(e){
+      changetoBlack();
+  })
+}
+
+function changetoBlack(){
+  
+  const testingBlackButton = document.getElementById("grid")
+  testingBlackButton.addEventListener("mouseover", function(e){
+    const target = e.target;
+
+    if(target.matches('.item')){
+      target.style.backgroundColor = "#000000"
+    }
   })
 }
 
@@ -46,31 +55,44 @@ function random_bg_color() {
   return bgColor;
 }
 
-function RainbowMode() {
+function setToRainbow() {
   
-  const myGame = document.getElementById('grid');
-  myGame.addEventListener("mouseover", function(e){
-    const target = e.target; 
+  const rainbowButton = document.getElementById("3")
+    rainbowButton.addEventListener("click", function(e){
+      changetoRainbow();
+  })
+}
 
-    if(target.matches(".item")){
-        target.style.backgroundColor = random_bg_color();
+function changetoRainbow(){
+  const testingRainbowButton = document.getElementById("grid")
+  testingRainbowButton.addEventListener("mouseover", function(e){
+    const target = e.target;
+
+    if(target.matches('.item')){
+      target.style.backgroundColor = random_bg_color();
     }
-  });
-};
+  })
+}
 
-function buttons(){
-  const myButt = document.getElementById("1")
- 
- myButt.addEventListener("click", function(e){
-   console.log(e);
-   const clearGrid = document.getElementsByClassName('item');
-   clearGrid.style.backgroundColor = random_bg_color(); 
-   })
-};
+function random_bg_color() {
+  
+  let x = Math.floor(Math.random() * 256);
+  let y = Math.floor(Math.random() * 256);
+  let z = Math.floor(Math.random() * 256);
+  let bgColor = "rgb(" + x + "," + y + "," + z + ")";
+
+  console.log(bgColor);
+
+  return bgColor;
+}
 
 
 
 
 
-RainbowMode();
+
+
+
 clearGrid();
+setToRainbow();
+setToBlack();
